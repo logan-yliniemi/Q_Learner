@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <algorithm>
 
 using namespace std;
 
@@ -223,14 +224,15 @@ void gridworld::stat_run(){
             steps++;
             //cout << pa->action << endl;
         }
-        cout << "EPISODE " << episode << " COMPLETE, Steps: " << steps << endl;
+        //cout << "EPISODE " << episode << " COMPLETE, Steps: " << steps << endl;
+        cout << steps << endl;
         start();
     }
     
 }
 
 int main() {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
     cout << "begin program" << endl;
     gridworld grid;
     Q_Learner agent;
