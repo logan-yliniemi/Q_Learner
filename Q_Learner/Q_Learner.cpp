@@ -163,7 +163,7 @@ int Q_Learner::greedy_action_selection(){
 void Q_Learner::Q_update(){
     double Qval = Q.at(prevstate).at(action);
     double Qmax = Q.at(state).at(greedy_action_selection());
-    Qval = Qval + alpha * (reward + gamma * Qmax + Qval);
+    Qval = Qval + alpha * (reward + gamma * Qmax - Qval);
     Q.at(prevstate).at(action) = Qval;
 }
 
